@@ -1,118 +1,141 @@
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
+import {Card, CardHeader, CardBody, CardFooter, Avatar, Button, Tab, Tabs} from "@nextui-org/react";
+import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+  faBilibili,
+  faDiscord,
+  faGithub,
+  faTelegram,
+  faTwitter
+} from "@fortawesome/free-brands-svg-icons";
+import Link from "next/link";
 
-const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
-    <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
-    >
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/pages/index.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+      <main className="md:p-4 xl:p-10">
+        (
+        <Card className="w-11/12 md:w-2/3 p-4 mx-auto">
+          <Avatar
+              src="https://q2.qlogo.cn/headimg_dl?dst_uin=3245433516&spec=640"
+              className="w-36 h-36 mx-auto"
+              isBordered={true}
+          />
+          <h1 className="font-bold text-2xl md:text-3xl text-center">Kagurate Shirona's Website</h1>
+          <h2 className="text-center">General Human</h2>
+          <div className="flex justify-center gap-2">
+            <Button
+                isIconOnly
+                color="default"
+                variant="faded"
+                aria-label="Bilibili"
+                onClick={() => window.location.href="https://space.bilibili.com/3461579100129551"}
+            >
+              <FontAwesomeIcon icon={faBilibili} />
+            </Button>
+            <Button
+                isIconOnly
+                color="default"
+                variant="faded"
+                aria-label="Github"
+                onClick={() => window.location.href="https://github.com/NagatoException"}
+            >
+              <FontAwesomeIcon icon={faGithub} />
+            </Button>
+            <Button
+                isIconOnly
+                color="default"
+                variant="faded"
+                aria-label="Twitter"
+                onClick={() => window.location.href="https://x.com/nexcept8964"}
+            >
+              <FontAwesomeIcon icon={faTwitter} />
+            </Button>
+            <Button
+                isIconOnly
+                color="default"
+                variant="faded"
+                aria-label="Discord"
+                onClick={() => window.location.href="https://discord.com/users/1009422023790960730"}
+            >
+              <FontAwesomeIcon icon={faDiscord} />
+            </Button>
+            <Button
+                isIconOnly
+                color="default"
+                variant="faded"
+                aria-label="Telegram"
+                onClick={() => window.location.href="https://t.me/NagatoException"}
+            >
+              <FontAwesomeIcon icon={faTelegram} />
+            </Button>
+          </div>
+        </Card>
+        <Card className="w-11/12 md:w-2/3 p-4 m-3 mx-auto">
+        <Tabs aria-label="Options" className={`self-center h-full w-full`}>
+          <Tab key="posts" title="文章">
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700/10 after:dark:from-sky-900 after:dark:via-[#0141ff]/40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+          </Tab>
+          <Tab key="about" title="关于">
+            <div className={`text-left w-full h-full p-3`}>
+              <h3 className={`font-bold text-2xl`}>关于</h3>
+              <p>嘿，你好！我是Kagurate Shirona（曾用名：NagatoException(nexcept,nexception))，一个普通的人类。</p>
+              <p>我是一名跨性别女性，但是你可以使用he/his she/her ve/vis xe/xyr ae/aer per/pers ey/eir zie/zer sie/hir thy/thm e/eir thry/their ze/hir sus/sussy称呼我。</p>
+              <p>我目前属于休学状态。</p>
+              <p>我是一名前端开发者，后端开发者，嵌入式开发者。</p>
+              <p>我目前掌握的编程语言：HTML5, CSS3, JavaScript(React, Next.JS), Bootstrap, TailwindCSS, JQuery, PHP(laravel), GoLang, C/C++, Python, Shell</p>
+              <p>目前正在学习的编程语言：Rust(不打算继续学了), Java</p>
+              <p>我会使用的软件：KiCad, AltiumDesigner, Cadence, CATIA, SolidWorks, IntellijIdea, Kate</p>
+              <p>我游玩的的游戏：Minecraft, Maimai, Muse Dash, A Dance of Ice and Fire, Blue Archive</p>
+              <p>我的设备：</p>
+              <p>台式机：</p>
+              <ul>
+                <li>主板：技嘉 AROUS X570 ELITE WIFI</li>
+                <li>CPU：AMD Ryzen 9 5900X</li>
+                <li>显卡：七彩虹 iGame GeForce RTX 4060 战斧</li>
+                <li>内存：海盗船 DDR4 3600 32G*2</li>
+                <li>主硬盘：英睿达 P5 1TB</li>
+                <li>副硬盘：致钛 Ti670 2TB</li>
+                <li>电源：海韵 850W</li>
+                <li>机箱：LianLi不知道型号</li>
+                <li>显示器：戴尔P2723D + AOC Q27B3</li>
+                <li>键盘：客制化</li>
+                <li>鼠标：罗技G502</li>
+                <li>系统：ArchLinux</li>
+              </ul>
+              <p>笔记本电脑：</p>
+              <ul>
+                <li>型号：HP ZHAN 66 Pro A 14 G4</li>
+                <li>CPU：AMD Ryzen 5 5600U</li>
+                <li>内存：镁光 DDR4 3200 16G*2</li>
+                <li>硬盘：致钛 Ti5000Plus 2TB</li>
+              </ul>
+              <p>手机：</p>
+              <ul>
+                <li>型号：Redmi Note 12 Turbo</li>
+                <li>系统：EvolutionX</li>
+              </ul>
+              <p>1111</p>
+            </div>
+          </Tab>
+          <Tab key="donate" title="捐助">
+            <Link href="https://afdian.net/a/kagurate">< img width="200" src="https://pic1.afdiancdn.com/static/img/welcome/button-sponsorme.jpg" alt=""></img></Link>
+            <Link href={"https://paypal.me/nexcept?country.x=C2&locale.x=en_US"}><img width="200" src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/PP_logo_h_200x51.png" alt="PayPal"></img></Link>
+            <img src={"/1699304756469.jpg"} alt={"支付宝"} height={200} className={`h-96`}/>
+            <img src={"mm_reward_qrcode_1699304718568.png"} alt={"微信"} className={`h-96`}/>
+            <Link href={"https://www.vultr.com/?ref=9511687"}>买服务器我推荐你Vultr</Link><br/>
+            <Link href={"https://miaona.one/#/register?code=Gn22p1Kg"}>代理我的域名推荐你Miaona</Link>
+          </Tab>
+          <Tab key="friends" title="友链">
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+          </Tab>
+          <Tab key="contact" title="联系">
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Discover and deploy boilerplate example Next.js&nbsp;projects.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+          </Tab>
+        </Tabs>
+    </Card>
     </main>
   )
 }
