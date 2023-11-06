@@ -23,7 +23,7 @@ export default function Home() {
               className="w-36 h-36 mx-auto"
               isBordered={true}
           />
-          <h1 className="font-bold text-2xl md:text-3xl text-center">Kagurate Shirona's Website</h1>
+          <h1 className="font-bold text-2xl md:text-3xl text-center">Kagurate Shirona&apos;s Website</h1>
           <h2 className="text-center">General Human</h2>
           <div className="flex justify-center gap-2">
             <Button
